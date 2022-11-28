@@ -79,3 +79,135 @@ i{
 section{
     overflow: hidden;
 }
+
+/* button */
+.button{
+    display: inline-block;
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    cursor: pointer;
+    border-radius: .8rem;
+    transition: background-color .25s;
+    
+}
+
+.button--dark{
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
+}
+
+.button--dark:hover{
+    background-color: hsl(200, 12%, 24%);
+}
+
+.container{
+    max-width: 117rem;
+    margin-inline: auto;
+    padding-inline: 1.8rem;
+}
+
+/* Header */
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--nav-height);
+}
+
+.nav__overlay{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s, visibility .25s;
+}
+.nav__overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav__menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 27rem;
+    background-color: var(--accent-clr);
+    padding: 5.rem 1.8rem;
+    /* transform: translateX(28rem); */
+    transition: transform .25;
+}
+
+.nav__menu.active{
+    transform:translateX(0);
+}
+
+.nav__search{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 1rem;
+    border: .15rem solid var(--dark-clr);
+    border-radius: .8rem;
+    margin-bottom: 1rem;
+
+}
+
+.nav__search:focus-within{
+    border-color: var(--pink-clr);
+}
+
+.nav__search-icon{
+    display: inline-flex;
+}
+
+.nav__search-input{
+    width: 100%;
+}
+
+.nav__search-input::placeholder{
+    font-size: 1.4rem;
+    color: inherit;
+    transition: opacity .25s;
+}
+
+.nav__search-input:focus::placeholder{
+    opacity: 0;
+}
+
+.nav__list{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.nav__list-link{
+    display: inline-block;
+    padding: .5rem;
+    transition: color .25s;
+}
+
+.nav__list-link:hover{
+    color:var(--pink-clr)
+}
+
+.nav__button{
+    display: block;
+    padding: 1.2rem 2.5rem;
+    margin-top:1.5rem ;
+}
+
+.nav__close{
+    position: absolute;
+    top: 1.8rem;
+    right: 1.8rem;
+}
